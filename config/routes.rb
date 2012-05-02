@@ -1,11 +1,9 @@
 TodoLists::Application.routes.draw do
-  get "message/index"
-
-  get "message/create"
-
   devise_for :users
 
-  resources :todo_lists
+  resources :todo_lists do
+    resources :messages, :only => [:index, :create]
+  end
 
   root to: 'todo_lists#index'
   
