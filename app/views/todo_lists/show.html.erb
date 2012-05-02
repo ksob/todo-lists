@@ -10,10 +10,9 @@
   <%= @todo_list.description %>
 </p>
 
-<p>
-  <b>Contents:</b>
-  <%= @todo_list.contents %>
-</p>
+<ul id="chat">
+  <%= render @todo_list.messages %>
+</ul>
 
 <%= form_for([@todo_list, Message.new], remote: true) do |f| %>
   <%= f.text_field :content %>
