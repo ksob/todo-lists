@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @todo_list.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @todo_list.description %>
+</p>
+
+<p>
+  <b>Contents:</b>
+  <%= @todo_list.contents %>
+</p>
+
+
+<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
+<%= link_to 'Back', todo_lists_path %>
