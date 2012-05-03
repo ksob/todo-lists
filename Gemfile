@@ -20,6 +20,9 @@ gem 'jquery-rails'
 
 gem 'devise'
 
+gem "private_pub"
+gem "thin"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
