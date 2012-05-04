@@ -25,3 +25,52 @@ ul#todo_list {
 input#message_content {
   width: 240px;
 }
+
+.devise_form div {
+  margin: 0.5em 0 0;
+}
+
+.ui-button {
+	margin: 0.5em 0 0;
+}
+
+header #authentication {
+	position: absolute;
+    top: 0px;
+    right: 0.5em;
+}
+
+header #general-navigation {
+    position: absolute;
+    top: 0px;
+    left: 0.5em;
+}
+
+header nav ul {
+	list-style: none;
+	margin: 0 0 3em;
+	padding: 0;
+}
+
+header nav ul li {
+	display: inline;
+}
+
+nav {
+	width: 100%;
+}
+
+#right-side {
+	float: right;
+	padding-top: 1em;
+	padding-right: 1em;
+	padding-bottom: 1em;
+	a {
+		font-size: small; }}
+
+#main {
+	float: left;
+	margin-left: 1em;
+	padding-top: 3ex;
+	padding-left: 1em;
+	background: white; }
