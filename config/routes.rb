@@ -2,7 +2,7 @@ TodoLists::Application.routes.draw do
   devise_for :users
 
   resources :todo_lists do
-    resources :messages, :only => [:index, :create]
+    resources :messages#, :only => [:index, :create]
   end
 
   root to: 'todo_lists#index'

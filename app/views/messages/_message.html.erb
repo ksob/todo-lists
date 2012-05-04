@@ -1,4 +1,5 @@
+
 <li>
-  <span class="created_at"><%= message.created_at.strftime("%H:%M") %></span>
+  <span class="created_at"><%= button_to "delete", [@todo_list, message], :method => :delete, :remote => true  %></span>
   <%= message.content %>
 </li>
