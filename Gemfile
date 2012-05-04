@@ -22,6 +22,7 @@ end
 gem 'jquery-rails'
 
 gem 'devise'
+gem "cancan"
 
 gem "private_pub"
 gem "thin"
