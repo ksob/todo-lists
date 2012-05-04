@@ -8,6 +8,26 @@ class MessagesController < ApplicationController
     @todo_list = TodoList.find(params[:todo_list_id])
   end
 
+  def toggle_status
+    @todo_list = TodoList.find(params[:todo_list_id])
+    @message = Message.find(params[:id])
+    #@message.destroy
+        #@message = Message.find(params[:todo_list_id])
+   # @message = Message.find(params[:content])
+    #@message.destroy_tasks
+    #@message.status = !@message.status
+    #@message.save
+    respond_to do |format|
+      if @message.update_attributes({:status => !@message.status})
+        format.html { redirect_to @message, notice: 'Todo list was successfully updated.' }
+        format.json { head :ok }
+      else
+        format.html { render action: "edit" }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def destroy
     @todo_list = TodoList.find(params[:todo_list_id])
     @message = Message.find(params[:id])
