@@ -10,6 +10,5 @@
 //= require_tree .
 
 toggle_task_status = function(todo_list_id, message_id) {
-    var data
-    $.getJSON("/todo_lists/" + todo_list_id + "/messages/" + message_id + "/toggle_status", (data));
+    $.getScript("/todo_lists/" + todo_list_id + "/messages/" + message_id + "/toggle_status");
 };
