@@ -1,10 +1,10 @@
 development:
-  server: "http://localhost:9292/faye"
+  server: "http://glowing-robot-6850.herokuapp.com:80/faye"
   secret_token: "secret"
 test:
   server: "http://localhost:9292/faye"
   secret_token: "secret"
 production:
-  server: "http://example.com/faye"
-  secret_token: "2ec1a9ae39a9d5204c78a496493c9d3efad5eb7ddd6fae31594a818d9861ad18"
+  server: "http://glowing-robot-6850.herokuapp.com:80/faye"
+  secret_token: "secret"
   signature_expiration: 3600 # one hour
