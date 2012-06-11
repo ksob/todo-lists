@@ -14,11 +14,13 @@
 
 <%= subscribe_to "/messages/new" %>
 
-<%= form_for([@todo_list, Message.new(:todo_list_id=>@todo_list.id)], remote: true) do |f| %>
-  <%= f.text_field :content %>
-  <%= f.submit "Add task" %>
+<% if can? :update, @todo_list %>
+    <%= form_for([@todo_list, Message.new(:todo_list_id=>@todo_list.id)], remote: true) do |f| %>
+      <%= f.text_field :content %>
+      <%= f.submit "Add task" %>
+    <% end %>
+    <%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
 <% end %>
 
-<%= link_to 'Edit', edit_todo_list_path(@todo_list) %> |
 <%= link_to 'Back', todo_lists_path %>
 

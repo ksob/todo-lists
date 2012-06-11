@@ -15,12 +15,18 @@
     <td><%= todo_list.name %></td>
     <td><%= todo_list.description %></td>
     <td><%= link_to 'Show', todo_list %></td>
-    <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-    <td><%= link_to 'Destroy', todo_list, confirm: 'Are you sure?', method: :delete %></td>
+    <% if can? :edit, TodoList %>
+        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
+    <% end %>
+    <% if can? :destroy, TodoList %>
+        <td><%= link_to 'Destroy', todo_list, confirm: 'Are you sure?', method: :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Todo list', new_todo_list_path %>
+<% if can? :create, TodoList %>
+    <%= link_to 'New Todo list', new_todo_list_path %>
+<% end %>
