@@ -1,11 +1,11 @@
 <li>
   <% if can? :update, @todo_list %>
-      <span class="task_item">
+      <div class="task_item">
         <%= button_to "delete", [@todo_list, message], :method => :delete, :remote => true %>
-      </span>
-      <span class="task_item">
+      </div>
+      <div class="task_item">
         <%= check_box_tag 1, 2, message.status, :onclick=>"toggle_task_status(#{@todo_list.id}, #{message.id});" %>
-      </span>
+      </div>
   <% else %>
       <span class="task_item">
         <%= check_box_tag 1, 2, message.status, :disabled => true %>
