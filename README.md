@@ -18,7 +18,7 @@ Installation
 
 	git clone git://github.com/ksob/todo-lists.git
 	cd ./todo-lists
-	bundle install
+	bundle install --without test
   
 Faye Server Setup
 =================
@@ -31,7 +31,6 @@ To set your own remote Faye Server just clone this app and upload it onto Heroku
 
 To run Faye Server locally just clone this app and execute:
 
-	bundle install --without test
 	rackup private_pub.ru -s thin -E production
   
 You can change URL inside: config/private_pub.yml
@@ -39,7 +38,6 @@ You can change URL inside: config/private_pub.yml
 Running
 =======
 
-    bundle install --without test
     rake db:migrate
     rake db:seed
     rails s
