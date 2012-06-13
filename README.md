@@ -37,8 +37,8 @@ Test Suite
 
 	bundle install
 	RAILS_ENV=test rake db:migrate
-  RAILS_ENV=test rake db:seed
-  rake spec
+  	RAILS_ENV=test rake db:seed
+  	rake spec
   
 License
 =======
