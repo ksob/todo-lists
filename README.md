@@ -19,15 +19,27 @@ Installation
 	git clone git://github.com/ksob/todo-lists.git
 	cd ./todo-lists
 	bundle install
-		
-Running app (in development environment)
-========================================
+  
+Faye Server Setup
+=================
 
-	bundle install --without test production
+This application requires Faye Server to run.
+By default it uses existing one on Heroku. 
+To set your own remote Faye Server just clone this app and upload it onto Heroku adding Procfile containing:
+
+  web: bundle exec rackup private_pub.ru -p $PORT -s thin -E production
+
+To run Faye Server locally just clone this app and execute:
+
+	bundle install --without test
 	rackup private_pub.ru -s thin -E production
-	
-In second terminal:
+  
+You can change URL inside: config/private_pub.yml
+		
+Running
+=======
 
+  bundle install --without test
 	rake db:migrate
 	rake db:seed
 	rails s
@@ -35,10 +47,10 @@ In second terminal:
 Test Suite
 ==========
 
-	bundle install
-	RAILS_ENV=test rake db:migrate
-  	RAILS_ENV=test rake db:seed
-  	rake spec
+  bundle install
+  RAILS_ENV=test rake db:migrate
+  RAILS_ENV=test rake db:seed
+  rake spec
   
 License
 =======
