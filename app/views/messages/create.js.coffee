@@ -1,0 +1,4 @@
+<% publish_to "/messages/new" do %>
+  $("#todo_list").append("<%= j render(@message) %>")
+<% end %>
+$("#new_message")[0].reset()

@@ -1,9 +1,5 @@
 class MessagesController < ApplicationController
   load_and_authorize_resource
-  
-  def index
-    @messages = Message.all
-  end
 
   def create
     @message = Message.create!(params[:message].merge(:todo_list_id => params[:todo_list_id]))
@@ -16,13 +12,7 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.update_attributes({:status => !@message.status})
-        format.html { redirect_to @message, notice: 'Todo list was successfully updated.' }
         format.js
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.js
-        format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
   end

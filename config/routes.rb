@@ -4,10 +4,10 @@ TodoLists::Application.routes.draw do
   devise_for :users
 
   resources :todo_lists do
-    resources :messages do#, :only => [:index, :create]
-       member do
-    get 'toggle_status'
-  end
+    resources :messages do
+      member do
+        get 'toggle_status'
+      end
     end
   end
 
